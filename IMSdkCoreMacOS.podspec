@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "IMSdkCoreMacOS"
-  spec.version      = "1.0.0"
+  spec.version      = "1.0.3"
   spec.summary      = "IM-SDK-Core-MacOS."
 
   # This description is used to generate tags and improve search results.
@@ -24,9 +24,7 @@ Pod::Spec.new do |spec|
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  spec.description  = <<-DESC
-    简单实现的即时通讯（IM）项目，iOS版本IM SDK
-                   DESC
+  spec.description  = "简单实现的即时通讯（IM）项目，macOS版本IM SDK"
 
   spec.homepage     = "https://github.com/xxtea01/IMSdkCoreMacOS"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"

@@ -12,81 +12,8 @@
 
 #include "Open_im_sdk_callback.objc.h"
 
-@class Open_im_sdkLoginMgr;
-
-@interface Open_im_sdkLoginMgr : NSObject <goSeqRefInterface> {
-}
-@property(strong, readonly) _Nonnull id _ref;
-
-- (nonnull instancetype)initWithRef:(_Nonnull id)ref;
-- (nullable instancetype)init;
-- (id<Open_im_sdk_callbackOnAdvancedMsgListener> _Nullable)advancedMsgListener;
-- (id<Open_im_sdk_callbackOnBatchMsgListener> _Nullable)batchMsgListener;
-- (id<Open_im_sdk_callbackOnCustomBusinessListener> _Nullable)businessListener;
-// skipped method LoginMgr.Context with unsupported parameter or return types
-
-// skipped method LoginMgr.Conversation with unsupported parameter or return types
-
-- (id<Open_im_sdk_callbackOnConversationListener> _Nullable)conversationListener;
-- (void)exit;
-// skipped method LoginMgr.File with unsupported parameter or return types
-
-- (id<Open_im_sdk_callbackOnFriendshipListener> _Nullable)friendshipListener;
-// skipped method LoginMgr.GetLoginStatus with unsupported parameter or return types
-
-- (NSString* _Nonnull)getLoginUserID;
-- (NSString* _Nonnull)getToken;
-// skipped method LoginMgr.Group with unsupported parameter or return types
-
-- (id<Open_im_sdk_callbackOnGroupListener> _Nullable)groupListener;
-// skipped method LoginMgr.ImConfig with unsupported parameter or return types
-
-// skipped method LoginMgr.InitSDK with unsupported parameter or return types
-
-// skipped method LoginMgr.Login with unsupported parameter or return types
-
-// skipped method LoginMgr.Logout with unsupported parameter or return types
-
-// skipped method LoginMgr.LongConnMgr with unsupported parameter or return types
-
-- (id<Open_im_sdk_callbackOnMessageKvInfoListener> _Nullable)msgKvListener;
-// skipped method LoginMgr.NetworkStatusChanged with unsupported parameter or return types
-
-// skipped method LoginMgr.Relation with unsupported parameter or return types
-
-- (void)setAdvancedMsgListener:(id<Open_im_sdk_callbackOnAdvancedMsgListener> _Nullable)advancedMsgListener;
-// skipped method LoginMgr.SetAppBackgroundStatus with unsupported parameter or return types
-
-- (void)setBatchMsgListener:(id<Open_im_sdk_callbackOnBatchMsgListener> _Nullable)batchMsgListener;
-- (void)setConversationListener:(id<Open_im_sdk_callbackOnConversationListener> _Nullable)conversationListener;
-- (void)setCustomBusinessListener:(id<Open_im_sdk_callbackOnCustomBusinessListener> _Nullable)listener;
-- (void)setFriendshipListener:(id<Open_im_sdk_callbackOnFriendshipListener> _Nullable)friendshipListener;
-- (void)setGroupListener:(id<Open_im_sdk_callbackOnGroupListener> _Nullable)groupListener;
-- (void)setMessageKvInfoListener:(id<Open_im_sdk_callbackOnMessageKvInfoListener> _Nullable)messageKvInfoListener;
-- (void)setUserListener:(id<Open_im_sdk_callbackOnUserListener> _Nullable)userListener;
-- (id<Open_im_sdk_callbackOnSignalingListener> _Nullable)signalingListener;
-// skipped method LoginMgr.Third with unsupported parameter or return types
-
-- (void)unInitSDK;
-// skipped method LoginMgr.User with unsupported parameter or return types
-
-- (id<Open_im_sdk_callbackOnUserListener> _Nullable)userListener;
-@end
-
-FOUNDATION_EXPORT const int64_t Open_im_sdkLogged;
-FOUNDATION_EXPORT const int64_t Open_im_sdkLogging;
-FOUNDATION_EXPORT const int64_t Open_im_sdkLogoutStatus;
-FOUNDATION_EXPORT NSString* _Nonnull const Open_im_sdkLogoutTips;
-
 @interface Open_im_sdk : NSObject
-+ (NSError* _Nullable) errNotImplemented;
-+ (void) setErrNotImplemented:(NSError* _Nullable)v;
-
-/**
- * UserForSDK Client-independent user class
- */
-+ (Open_im_sdkLoginMgr* _Nullable) userForSDK;
-+ (void) setUserForSDK:(Open_im_sdkLoginMgr* _Nullable)v;
+// skipped variable UserForSDK with unsupported type: *github.com/xxtea01/im-sdk-core/open_im_sdk/related.LoginMgr
 
 @end
 
@@ -110,11 +37,6 @@ FOUNDATION_EXPORT void Open_im_sdkChangeGroupMute(id<Open_im_sdk_callbackBase> _
 FOUNDATION_EXPORT void Open_im_sdkChangeInputStates(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable conversationID, BOOL focus);
 
 FOUNDATION_EXPORT void Open_im_sdkCheckFriend(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable userIDList);
-
-/**
- * CheckResourceLoad checks the SDK is resource load status.
- */
-FOUNDATION_EXPORT BOOL Open_im_sdkCheckResourceLoad(Open_im_sdkLoginMgr* _Nullable uSDK, NSString* _Nullable funcName, NSError* _Nullable* _Nullable error);
 
 FOUNDATION_EXPORT void Open_im_sdkClearConversationAndDeleteAllMsg(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable conversationID);
 
@@ -296,15 +218,13 @@ FOUNDATION_EXPORT void Open_im_sdkLogs(id<Open_im_sdk_callbackBase> _Nullable ca
 FOUNDATION_EXPORT void Open_im_sdkMarkAllConversationMessageAsRead(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID);
 
 /**
- * mark as read
+ * MarkConversationMessageAsRead mark as read
  */
 FOUNDATION_EXPORT void Open_im_sdkMarkConversationMessageAsRead(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable conversationID);
 
 FOUNDATION_EXPORT void Open_im_sdkMarkMessagesAsReadByMsgID(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable conversationID, NSString* _Nullable clientMsgIDs);
 
 FOUNDATION_EXPORT void Open_im_sdkNetworkStatusChanged(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID);
-
-FOUNDATION_EXPORT Open_im_sdkLoginMgr* _Nullable Open_im_sdkNewLoginMgr(void);
 
 FOUNDATION_EXPORT void Open_im_sdkQuitGroup(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable groupID);
 
@@ -367,6 +287,9 @@ FOUNDATION_EXPORT void Open_im_sdkSetGroupMemberInfo(id<Open_im_sdk_callbackBase
 FOUNDATION_EXPORT void Open_im_sdkSetMessageKvInfoListener(id<Open_im_sdk_callbackOnMessageKvInfoListener> _Nullable listener);
 
 FOUNDATION_EXPORT void Open_im_sdkSetMessageLocalEx(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable conversationID, NSString* _Nullable clientMsgID, NSString* _Nullable localEx);
+
+// skipped function SetNumeric with unsupported parameter or return types
+
 
 /**
  * SetSelfInfo sets the user's own information.
