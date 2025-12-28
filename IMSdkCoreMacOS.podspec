@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "IMSdkCoreMacOS"
-  spec.version      = "2.0.5"
+  spec.version      = "2.0.6"
   spec.summary      = "IM-SDK-Core-MacOS."
 
   # This description is used to generate tags and improve search results.
